@@ -1,5 +1,5 @@
 import features from "../../data/features";
-import FeatureCard from "./FeatureCard";
+import FeatureCard from "./featureCard";
 
 function WhyBuzzrr() {
        return (
