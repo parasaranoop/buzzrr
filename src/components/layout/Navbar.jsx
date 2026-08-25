@@ -39,6 +39,7 @@ import { Link } from "react-scroll";
 import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
 import { openWhatsapp } from "../../hooks/useWhatsapp";
 //import logo from "../../assets/BUZZRR.jpeg";
+import logo from "../../assets/logo.png";
 
 function Navbar() {
        const [menuOpen, setMenuOpen] = useState(false);
@@ -60,10 +61,11 @@ function Navbar() {
 
                             {/* Logo */}
                             {/* <img src={logo} alt="Buzzrr Logo" className="h-18 w-auto cursor-pointer" /> */}
+                            <img src={logo} alt="Bzzrr Logo" className="w-50 h-auto object-contain" />
 
-                            <h1 className="cursor-pointer text-3xl font-bold text-blue-600">
+                            {/* <h1 className="cursor-pointer text-3xl font-bold text-blue-600">
                                    Bzzrr
-                            </h1>
+                            </h1> */}
 
                             {/* Desktop Menu */}
                             <nav className="hidden items-center gap-10 lg:flex">

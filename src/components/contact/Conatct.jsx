@@ -1,4 +1,4 @@
-import ContactForm from "./ConatctForm";
+//import ContactForm from "./ConatctForm";
 import ContactInfo from "./ContactInfo";
 
 function Conatct() {
@@ -12,7 +12,7 @@ function Conatct() {
                                    </p>
                             </div>
                             <div className="grid lg:grid-cols-2 gap-10">
-                                   <ContactForm />
+
                                    <ContactInfo />
                             </div>
                      </div>

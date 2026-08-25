@@ -1,5 +1,7 @@
 import ChatBubble from "./ChatBubble";
-
+import logo from "../../assets/logo.png";
+import { FaMapMarkedAlt } from "react-icons/fa";
+import LocationBubble from "./LocationBubble";
 function HeroPhone() {
        return (
               <div className="flex justify-center">
@@ -22,9 +24,14 @@ function HeroPhone() {
 
                             {/* Header */}
                             <div className="mt-4 mb-6 flex items-center gap-3">
-                                   <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
-                                          B
+                                   <div className="h-10 w-10 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold">
+                                          <img src={logo} alt="Bzzrr Logo" className="w-50 h-auto object-contain" />
+
                                    </div>
+
+
+
+
 
                                    <div>
                                           <h3 className="text-sm font-semibold text-gray-900">
@@ -48,9 +55,14 @@ function HeroPhone() {
                                           sender="user"
                                    />
 
+
                                    <ChatBubble
                                           message="Please share your location"
                                    />
+                                   <ChatBubble
+                                          message="Location Shared"
+                                          sender="user" />
+
 
                                    <ChatBubble
                                           message="Technician assigned"
