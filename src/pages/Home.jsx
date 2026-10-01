@@ -27,6 +27,7 @@ function Home() {
                      <section id="services">
                             <Services />
                      </section>
+                     {/*no need now*/}
 
                      <section id="stores">
                             <ExploreStores />

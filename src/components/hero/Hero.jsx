@@ -146,8 +146,31 @@ import { openWhatsapp } from "../../hooks/useWhatsapp";
 import { openCall } from "../../hooks/useCall";
 import HeroPhone from "./HeroPhone";
 import Timeline from "./Timeline";
+import { useEffect, useState } from "react";
 
 function Hero() {
+       //logic for customer 1 to 30k
+       const [customerCount, setCustomerCount] = useState(1)
+       useEffect(() => {
+              const target = 30000;
+              const duration = 2000;
+              const incrementTime = 2;
+              const totalSteps = duration / incrementTime;
+              const increment = target / totalSteps;
+
+              const timer = setInterval(() => {
+                     setCustomerCount((previousCount) => {
+                            const nextCount = Math.ceil(previousCount + increment);
+
+                            if (nextCount >= target) {
+                                   clearInterval(timer)
+                                   return target;
+                            }
+                            return nextCount;
+                     }, incrementTime);
+                     return () => clearInterval(timer);
+              })
+       }, []);
        return (
               <section
                      id="home"
@@ -179,7 +202,7 @@ function Hero() {
                                    >
 
                                           {/* Badge */}
-                                          <div
+                                          {/* <div
                                                  className="
                                                         inline-flex
                                                         rounded-full
@@ -193,11 +216,15 @@ function Hero() {
                                                  "
                                           >
                                                  VERIFIED SERVICES & TRUSTED STORES
+                                          </div>*/}
+                                          <div className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-left text-xs font-medium text-blue-600 sm:text-sm">
+                                                 VERIFIED SERVICES & TRUSTED STORES
                                           </div>
 
 
+
                                           {/* Heading */}
-                                          <h1
+                                          {/* <h1
                                                  className="
                                                         mt-6
                                                         text-4xl
@@ -210,7 +237,7 @@ function Hero() {
                                                  "
                                           >
                                                  Help in
-                                                 <span className="text-blue-600">
+                                                 <span className="text-blue-600 ">
                                                         {" "}1 Hour.
                                                  </span>
 
@@ -220,26 +247,37 @@ function Hero() {
                                                  <span className="text-green-500">
                                                         {" "}WhatsApp.
                                                  </span>
+                                          </h1> */}
+                                          <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-gray-900 sm:text-5xl lg:text-[64px]" >
+                                                 <span className="block">
+                                                        Help in{""}
+                                                        <span className="text-blue-600">{" "}1 Hour.</span>
+                                                 </span>
+                                                 <span className="mt-2 block">
+                                                        Book on{" "}
+                                                        <span className="text-green-600">WhatsApp.</span>
+                                                 </span>
                                           </h1>
+
 
 
                                           {/* Subtitle */}
                                           {/* <p
                                                  className="
                                                         mx-auto
-                                                        mt-5
+                                                        mt-3
                                                         max-w-xl
                                                         text-base
-                                                        leading-7
+                                                        leading-5
                                                         text-gray-600
                                                         sm:text-lg
-                                                        sm:leading-6
+                                                        sm:leading-4
                                                         lg:mx-0
                                                  "
                                           >
                                                  Trusted technicians for all your home needs.
 
-                                                 <br className="hidden sm:block" />
+                                                  <br className="hidden sm:block" /> 
 
                                                  <span className="font-medium text-blue-600">
                                                         No app.
@@ -252,13 +290,42 @@ function Hero() {
                                                  Just WhatsApp.
                                           </p> */}
 
-                                          <p className="mt-5 text-lg leading-5 text-gray-600">
+                                          <p
+                                                 className="
+    mx-auto
+    mt-4
+    max-w-xl
+    text-base
+    leading-6
+    text-gray-600
+    sm:text-lg
+    lg:mx-0
+  "
+                                          >
+                                                 Trusted technicians for all your home needs.
+
+                                                 <br />
+
+                                                 <span className="whitespace-nowrap">
+                                                        <span className="font-medium text-blue-600">
+                                                               No app,
+                                                        </span>{" "}
+
+                                                        <span className="font-medium text-blue-600">
+                                                               No calls
+                                                        </span>{" "}
+
+                                                        Just WhatsApp.
+                                                 </span>
+                                          </p>
+
+                                          {/* <p className="mt-5 text-lg leading-7 text-gray-600">
                                                  Trusted technicians for all your home needs.
                                                  <br />
-                                                 <span className="font-medium text-blue-600">No app.</span>{" "}
+                                                 <span className="font-medium text-blue-600 ">No app.</span>{" "}
                                                  <span className="font-medium text-blue-600">No calls.</span>{" "}
                                                  Just WhatsApp.
-                                          </p>
+                                          </p> */}
 
 
                                           {/* ================= SERVICES ================= */}
@@ -318,85 +385,22 @@ function Hero() {
 
 
                                           {/* ================= BUTTONS ================= */}
-                                          <div
-                                                 className="
-                                                        mt-8
-                                                        flex
-                                                        flex-col
-                                                        gap-3
-                                                        sm:flex-row
-                                                        sm:flex-wrap
-                                                        sm:justify-center
-                                                        lg:justify-start
-                                                 "
-                                          >
-
-                                                 {/* WhatsApp Button */}
-                                                 <button
-                                                        onClick={openWhatsapp}
-                                                        className="
-                                                               flex
-                                                               w-full
-                                                               items-center
-                                                               justify-center
-                                                               gap-3
-                                                               rounded-full
-                                                               bg-green-500
-                                                               px-6
-                                                               py-3.5
-                                                               text-sm
-                                                               font-medium
-                                                               text-white
-                                                               shadow-lg
-                                                               transition
-                                                               duration-300
-                                                               hover:-translate-y-1
-                                                               hover:bg-green-600
-                                                               sm:w-auto
-                                                               sm:px-7
-                                                               sm:py-4
-                                                               sm:text-base
-                                                        "
-                                                 >
+                                          <div className="mt-8 flex flex-row gap-3 sm:justify-center lg:jsutify-start">
+                                                 {/*Whatsapp button */}
+                                                 <button onClick={openWhatsapp}
+                                                        className="flex flex-1 items-center justify-center gap-2 rounded-full bg-green-500 px-3 py-3 text-sm font-medium text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-green-600 sm:flex-none sm:px-7 sm:py-4 sm:text-base">
                                                         <FaWhatsapp className="text-lg sm:text-xl" />
-
                                                         Book on WhatsApp
                                                  </button>
-
-
-                                                 {/* Call Button */}
+                                                 {/*Call button */}
                                                  <button
                                                         onClick={openCall}
-                                                        className="
-                                                               flex
-                                                               w-full
-                                                               items-center
-                                                               justify-center
-                                                               gap-3
-                                                               rounded-full
-                                                               bg-blue-600
-                                                               px-6
-                                                               py-3.5
-                                                               text-sm
-                                                               font-medium
-                                                               text-white
-                                                               shadow-lg
-                                                               transition
-                                                               duration-300
-                                                               hover:-translate-y-1
-                                                               hover:bg-blue-700
-                                                               sm:w-auto
-                                                               sm:px-7
-                                                               sm:py-4
-                                                               sm:text-base
-                                                        "
-                                                 >
-                                                        <FaPhoneAlt className="text-sm sm:text-base" />
-
+                                                        className="flex flex-1 items-center justify-center gap-2 rounded-full bg-blue-600 px-3 py-3 text-sm font-medium text-white shadow-lg transition duration-300 hover:translate-y-1 hover:bg-blue-700 sm:flex-none sm:px-7 sm:py-4 sm:text-base">
+                                                        <FaPhoneAlt className="text-lg sm:text-xl" />
                                                         Call Us
                                                  </button>
-
                                           </div>
+
 
 
                                           {/* ================= CUSTOMERS ================= */}
@@ -414,7 +418,7 @@ function Hero() {
                                           >
 
                                                  {/* Customer avatars */}
-                                                 <div className="flex -space-x-3">
+                                                 {/* <div className="flex -space-x-3">
 
                                                         <div
                                                                className="
@@ -455,10 +459,36 @@ function Hero() {
                                                                "
                                                         />
 
+                                                 </div> */}
+
+                                                 {/*Replace empty div with image tag */}
+                                                 <div className="flex flex-row items-center -space-x-0.5">
+                                                        <img
+                                                               src="https://randomuser.me/api/portraits/men/32.jpg"
+                                                               alt="Customer avatar"
+                                                               // className="h-9 w-9 rounded-full border-2 border-white bg-gray-300 sm:h-10 sm:w-10
+                                                               className="relative z-30 h-9 w-9 rounded-full border-2 border-white object-cover sm:h-10 sm:w-10"
+
+
+                                                        />
+                                                        <img
+                                                               src="https://randomuser.me/api/portraits/women/44.jpg"
+                                                               alt="Customer avatar"
+                                                               //className="h-9 w-9 rounded-full border-2 border-white bg-gray-400 sm:h-10 sm:w-10
+                                                               className="-ml-3 relative z-20 h-9 w-9 rounded-full border-2 border-white object-cover sm:h-10 sm:w-10"
+
+                                                        />
+                                                        <img
+                                                               src="https://randomuser.me/api/portraits/men/75.jpg"
+                                                               alt="Customer avatar"
+                                                               className="-ml-3 relative z-10 h-9 w-9 rounded-full border-2 border-white object-cover sm:h-10 sm:w-10"
+                                                        //className="h-9 w-9 rounded-full border-2 border-white bg-gray-400 sm:h-10 sm:w-10
+
+                                                        />
                                                  </div>
 
 
-                                                 <p
+                                                 {/* <p
                                                         className="
                                                                text-center
                                                                text-sm
@@ -467,8 +497,14 @@ function Hero() {
                                                         "
                                                  >
                                                         <span className="font-semibold text-gray-900">
-                                                               10,000+
+                                                               30,000+
                                                         </span>{" "}
+                                                        happy customers in Guwahati
+                                                 </p> */}
+                                                 <p className="text-center text-sm text-gray-600 sm:text-left">
+                                                        <span className="font-semibold text-gary-900">
+                                                               {customerCount.toLocaleString()}+
+                                                        </span>{""}
                                                         happy customers in Guwahati
                                                  </p>
 

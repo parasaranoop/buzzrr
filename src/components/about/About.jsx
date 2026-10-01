@@ -341,6 +341,7 @@
 
 
 
+import { useState, useEffect } from "react";
 import {
        FaCheckCircle,
        FaBullseye,
@@ -351,6 +352,28 @@ import {
 } from "react-icons/fa";
 
 function About() {
+       const [customerCount, setCustomerCount] = useState(1)
+
+       useEffect(() => {
+              const target = 30000;
+              const duration = 2000;
+              const incrementTime = 2;
+              const totalSteps = duration / incrementTime;
+              const increment = target / totalSteps;
+
+              const timer = setInterval(() => {
+                     setCustomerCount((previousCount) => {
+                            const nextCount = Math.ceil(previousCount + increment);
+
+                            if (nextCount >= target) {
+                                   clearInterval(timer)
+                                   return target;
+                            }
+                            return nextCount;
+                     }, incrementTime);
+                     return () => clearInterval(timer);
+              })
+       }, []);
        return (
               <section className="bg-gray-50">
 
@@ -362,7 +385,7 @@ function About() {
                                           About Bzzrr
                                    </h1>
 
-                                   <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-blue-100 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
+                                   <p className="mx-auto mt-5 max-w-3xl text-base leading-5 text-blue-100 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
                                           Making home services simple, fast, and trustworthy.
                                           Bzzrr connects customers with verified professionals
                                           and trusted local businesses for a seamless service
@@ -387,7 +410,7 @@ function About() {
                                                  Who We Are
                                           </h2>
 
-                                          <p className="mt-5 text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
+                                          <p className="mt-5 text-base leading-5 text-gray-600 sm:text-lg sm:leading-5">
                                                  Bzzrr is a technology-driven platform designed
                                                  to make booking trusted home services easier
                                                  than ever. Whether you need an electrician,
@@ -397,7 +420,7 @@ function About() {
                                                  clicks.
                                           </p>
 
-                                          <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-5 sm:text-lg sm:leading-8">
+                                          <p className="mt-2 text-base leading-5 text-gray-600 sm:mt-5 sm:text-lg sm:leading-5">
                                                  Our mission is to remove the stress of finding
                                                  reliable service providers by offering a
                                                  simple booking experience, transparent pricing,
@@ -414,7 +437,7 @@ function About() {
                                                  Why Choose Bzzrr?
                                           </h3>
 
-                                          <p className="mt-3 text-sm leading-6 text-blue-100 sm:mt-4 sm:text-base sm:leading-7">
+                                          <p className="mt-3 text-sm leading-5 text-blue-100 sm:mt-4 sm:text-base sm:leading-7">
                                                  We connect homeowners with trusted,
                                                  verified professionals for fast, reliable,
                                                  and affordable home services.
@@ -518,7 +541,7 @@ function About() {
                                                  Our Mission
                                           </h3>
 
-                                          <p className="mt-3 text-sm leading-7 text-gray-600 sm:mt-4 sm:text-base sm:leading-8">
+                                          <p className="mt-3 text-sm leading-5 text-gray-600 sm:mt-4 sm:text-base sm:leading-8">
                                                  To simplify home service booking by connecting
                                                  customers with reliable professionals while
                                                  maintaining transparency, affordability, and
@@ -541,7 +564,7 @@ function About() {
                                                  Our Vision
                                           </h3>
 
-                                          <p className="mt-3 text-sm leading-7 text-gray-600 sm:mt-4 sm:text-base sm:leading-8">
+                                          <p className="mt-3 text-sm leading-5 text-gray-600 sm:mt-4 sm:text-base sm:leading-8">
                                                  To become India's most trusted platform for
                                                  home services by empowering local businesses
                                                  and delivering outstanding customer experiences
@@ -562,7 +585,7 @@ function About() {
                                                  Our Core Values
                                           </h2>
 
-                                          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:mt-4 sm:text-base sm:leading-7">
+                                          <p className="mx-auto mt-3 max-w-2xl text-sm leading-5 text-gray-600 sm:mt-4 sm:text-base sm:leading-7">
                                                  The principles that guide the way we build
                                                  Bzzrr and serve our customers.
                                           </p>
@@ -586,7 +609,7 @@ function About() {
                                                         Trust & Transparency
                                                  </h3>
 
-                                                 <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
+                                                 <p className="mt-3 text-sm leading-5 text-gray-600 sm:text-base sm:leading-8">
                                                         We believe strong customer relationships
                                                         are built through honesty, transparent
                                                         pricing, and dependable service.
@@ -608,7 +631,7 @@ function About() {
                                                         Quality Service
                                                  </h3>
 
-                                                 <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
+                                                 <p className="mt-3 text-sm leading-5 text-gray-600 sm:text-base sm:leading-8">
                                                         Every service provider on Bzzrr is
                                                         selected with quality, professionalism,
                                                         and customer satisfaction in mind.
@@ -632,8 +655,11 @@ function About() {
 
                                                  <FaUsers className="mx-auto text-4xl sm:text-5xl" />
 
+                                                 {/* <h2 className="mt-3 text-3xl font-bold sm:text-4xl lg:text-5xl">
+                                                        30000+
+                                                 </h2> */}
                                                  <h2 className="mt-3 text-3xl font-bold sm:text-4xl lg:text-5xl">
-                                                        10000+
+                                                        {customerCount.toLocaleString()}+
                                                  </h2>
 
                                                  <p className="mt-1 text-sm text-blue-100 sm:text-base">

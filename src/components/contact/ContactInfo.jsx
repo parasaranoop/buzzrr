@@ -38,7 +38,7 @@ function ContactInfo() {
                                    <FaEnvelope className="text-blue-400 text-xl mt-1" />
                                    <div>
                                           <h3 className="font-semibold">Email</h3>
-                                          <p>support@buzzrr.in</p>
+                                          <p>support@bzzrr.in</p>
                                    </div>
                             </div>
 

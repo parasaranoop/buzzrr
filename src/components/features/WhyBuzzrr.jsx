@@ -52,7 +52,7 @@ function WhyBuzzrr() {
                      id="why"
                      className="bg-gray-50 py-14 sm:py-16 md:py-20"
               >
-                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                     <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-8">
 
                             {/* Heading */}
                             <div className="text-center">
@@ -65,7 +65,7 @@ function WhyBuzzrr() {
                                           Why Bzzrr?
                                    </h2>
 
-                                   <p className="mx-auto mt-4 max-w-2xl px-2 text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
+                                   <p className="mx-auto mt-4 max-w-2xl px-2 text-base leading-5 text-gray-600 sm:text-lg sm:leading-8">
                                           Book trusted home services in minutes through WhatsApp.
                                           Fast response, verified technicians and transparent pricing.
                                    </p>

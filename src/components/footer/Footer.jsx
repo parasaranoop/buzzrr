@@ -162,7 +162,7 @@ function Footer() {
 
                                                  <p className="flex gap-3">
                                                         <FaEnvelope />
-                                                        support@buzzrr.in
+                                                        support@bzzrr.in
                                                  </p>
 
                                           </div>

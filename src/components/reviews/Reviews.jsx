@@ -18,8 +18,8 @@ function Reviews() {
                                           Loved by Thousands of Customers
                                    </h2>
 
-                                   <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-500">
-                                          See why homeowners across Guwahati trust Buzzrr for fast,
+                                   <p className="mx-auto mt-5 max-w-2xl text-lg leading-5 text-gray-500">
+                                          See why homeowners across Guwahati trust Bzzrr for fast,
                                           reliable and professional home services.
                                    </p>
 
