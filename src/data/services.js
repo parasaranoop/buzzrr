@@ -136,7 +136,10 @@ const services = [
               icon: FaTint,
               iconColor: "text-blue-600",
               bg: "bg-cyan-50",
-              image: "https://images.unsplash.com/photo-1585687433149-2c5b9b0e3d5b?auto=format&fit=crop&w=900&q=80",
+              //image: "https://images.unsplash.com/photo-1585687433149-2c5b9b0e3d5b?auto=format&fit=crop&w=900&q=80",
+              //image: "https://images.unsplash.com/photo-1585687433146-0e9a7f1f2d1e?auto=format&fit=crop&w=800&q=80",
+              // image: "https://images.unsplash.com/photo-1585687433146-0e9a7f1f2d1e?auto=format&fit=crop&w=800&q=80"
+              image: "https://upload.wikimedia.org/wikipedia/commons/6/63/RO_SYSTEM.jpg",
        },
 ];
 

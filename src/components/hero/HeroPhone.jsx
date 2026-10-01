@@ -1,6 +1,6 @@
 import ChatBubble from "./ChatBubble";
 //import logo from "../../assets/logo.png";
-import logo from "../../../public/bzzrr-favicon.png"
+import logo from "../../../public/favicon2.png"
 import LocationBubble from "./LocationBubble";
 import { FaCheck } from "react-icons/fa";
 
